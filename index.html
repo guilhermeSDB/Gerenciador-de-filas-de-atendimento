@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Senhas</title>
+
+    <script type="text/javascript">
+        var botaoClickado
+        var prioritario = [];
+        var comum =[];
+        var rapido = [];
+        var senhaCliente;
+        
+        clicks = 0;
+
+        function add (clicked_id) {
+            var botaoClickado = clicked_id;
+            clicks += 1;   
+
+            if(botaoClickado == "btn-comum"){
+                alert("Deu tudo certo e o botao clickado foi botao comum ");
+                senhaCliente = "C"+clicks;
+                comum.push("C"+clicks);
+                document.getElementById("senha-clientes").innerHTML = senhaCliente;
+            }else if (botaoClickado == "btn-rapido"){
+                alert("Deu tudo certo e o botao clickado foi botao rapido ")
+                senhaCliente = "R"+clicks;
+                rapido.push("R"+clicks);
+                document.getElementById("senha-clientes").innerHTML = senhaCliente;
+            }else if (botaoClickado == "btn-prioridade"){
+                alert("Deu tudo certo e o botao clickado foi botao prioritario");
+                senhaCliente = "P"+clicks;
+                prioritario.push("P"+clicks);
+                document.getElementById("senha-clientes").innerHTML = senhaCliente;
+            }
+            
+            
+        }
+        
+        function chamar(clicked_id) {  
+            var botaoClickado = clicked_id;
+            if(botaoClickado == "caixa1"){
+                var senhaChamada = prioritario[0];
+                document.getElementById("visor-tela").innerHTML = prioritario[0]; 
+                prioritario.pop[0];
+                document.getElementById("numero-caixa").innerHTML = senhaChamada;
+            }              
+            
+        }
+    </script>
+</head>
+<body>
+
+    <div class="title">
+        Loja ficticia S.A.
+    </div>
+    <div class="senha-chamada">
+        <h1 id="visor-tela" class="senha-tela">Selecione um tipo de atendimento!</h1> 
+        <br><br>
+        <span id="numero-caixa"> Caixa 2 </span>
+    </div>
+    <div class="clientes">
+        <h1>Para clientes:</h1>
+        Escolha seu tipo de atendimento: <br><br>
+        <input id="btn-comum" type="button" value="Comum" onclick="add(this.id)">
+        <input id="btn-rapido" type="button" value="Rapido" onclick="add(this.id)">
+        <input id="btn-prioridade" type="button" value="Prioritario" onclick="add(this.id)">
+        <br>
+        <br>
+        Sua senha é: <span id="senha-clientes" class="senha-cliente">P-29</span>
+    </div>
+
+    <div class="caixas">
+        <h1>Para caixas:</h1>
+        Clique em um caixa para chamar a senha: <br><br>
+        <input id="caixa1" onclick="chamar(this.id)" type="button" value="Caixa 1">
+        <input id="caixa2" onclick="chamar(this.id)" type="button" value="Caixa 2">
+        <input id="caixa3" onclick="chamar(this.id)" type="button" value="Caixa 3">
+        <input id="caixa4" onclick="chamar(this.id)" type="button" value="Caixa 4">
+
+
+    </div>
+
+</body>
+</html>
