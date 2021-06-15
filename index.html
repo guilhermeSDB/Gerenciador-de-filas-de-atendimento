@@ -24,17 +24,14 @@
             clicks += 1;   
 
             if(botaoClickado == "btn-comum"){
-                alert("Deu tudo certo e o botao clickado foi botao comum ");
                 senhaCliente = "C"+clicks;
                 comum.push("C"+clicks);
                 document.getElementById("senha-clientes").innerHTML = senhaCliente;
             }else if (botaoClickado == "btn-rapido"){
-                alert("Deu tudo certo e o botao clickado foi botao rapido ")
                 senhaCliente = "R"+clicks;
                 rapido.push("R"+clicks);
                 document.getElementById("senha-clientes").innerHTML = senhaCliente;
             }else if (botaoClickado == "btn-prioridade"){
-                alert("Deu tudo certo e o botao clickado foi botao prioritario");
                 senhaCliente = "P"+clicks;
                 prioritario.push("P"+clicks);
                 document.getElementById("senha-clientes").innerHTML = senhaCliente;
@@ -46,10 +43,15 @@
         function chamar(clicked_id) {  
             var botaoClickado = clicked_id;
             if(botaoClickado == "caixa1"){
-                var senhaChamada = prioritario[0];
-                document.getElementById("visor-tela").innerHTML = prioritario[0]; 
-                prioritario.shift();
-                document.getElementById("numero-caixa").innerHTML = "Caixa 1";
+                if(prioritario.length > 1){
+                    var senhaChamada = prioritario[0];
+                    document.getElementById("visor-tela").innerHTML = prioritario[0]; 
+                    prioritario.shift();
+                    document.getElementById("numero-caixa").innerHTML = "Caixa 1";
+                }else{
+                    
+                }
+                
             }else if(botaoClickado == "caixa2"){
                 var senhaChamada = rapido[0];
                 document.getElementById("visor-tela").innerHTML = rapido[0]; 
