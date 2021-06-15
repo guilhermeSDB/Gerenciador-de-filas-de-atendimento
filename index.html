@@ -48,10 +48,24 @@
             if(botaoClickado == "caixa1"){
                 var senhaChamada = prioritario[0];
                 document.getElementById("visor-tela").innerHTML = prioritario[0]; 
-                prioritario.pop[0];
-                document.getElementById("numero-caixa").innerHTML = senhaChamada;
-            }              
-            
+                prioritario.shift();
+                document.getElementById("numero-caixa").innerHTML = "Caixa 1";
+            }else if(botaoClickado == "caixa2"){
+                var senhaChamada = rapido[0];
+                document.getElementById("visor-tela").innerHTML = rapido[0]; 
+                rapido.shift;
+                document.getElementById("numero-caixa").innerHTML = "Caixa 2";
+            }else if(botaoClickado == "caixa3"){
+                var senhaChamada = rapido[0];
+                document.getElementById("visor-tela").innerHTML = rapido[0]; 
+                rapido.shift();
+                document.getElementById("numero-caixa").innerHTML = "Caixa 3";
+            }else if(botaoClickado == "caixa4"){
+                var senhaChamada = comum[0];
+                document.getElementById("visor-tela").innerHTML = comum[0]; 
+                comum.shift();
+                document.getElementById("numero-caixa").innerHTML = "Caixa 4";
+            }    
         }
     </script>
 </head>
