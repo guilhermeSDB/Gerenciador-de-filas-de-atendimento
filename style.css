@@ -1,59 +1,116 @@
-body{
-    margin: 0px;
-    padding: 0px;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    color: var(--branco);
 }
 
-h1{
-    padding: 0px;
-    margin: 0px;
+body{
+    --fundo: rgba(32, 33, 36, 0.88);
+    --branco: white;
+    --fundo-div: #202124;
+    background: var(--fundo);
 }
 
-.title{
-    width: 500px;
-    height: 50px;
-    padding-top: 30px;
-    margin: 0px auto;
-    text-align: center;
-    font-weight: bold;
+.container header{
+    background: var(--fundo-div);
+    height: 70px ;
+    margin-top: 0.75rem;
 }
 
-.senha-chamada{
-    margin: 10px 0px;
-    background-color: rgb(13, 13, 128);
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    padding: 35px 0px;
-}
-
-.clientes{
-    float: left;
-    text-align: center;
-    width: 49%;
-    height: 150px;
-    padding: 50px 0px;
-    background: lightgrey;
-    margin: 0px 5px;
-}
-
-.caixas{
-    float: left;
-    text-align: center;
-    width: 49%;
-    height: 150px;
-    padding: 50px 0px;
-    margin: 0px 5px;
-    background: lightgrey;
-}
-
-.senha-cliente{
-    font-size: 20px;
-    font-weight: bolder;
+.nome-banco{ 
+    display: flex;
+    justify-content: center;
+    font-size: 1.75rem;
+    padding: 15px 0px;
+    font-weight: 400;
     
 }
 
-.senha-tela{
-    font-size: 50px;
+.senha-chamada{
+    width: 90%;
+    margin: 1rem auto;
+    background: var(--fundo-div);
+    text-align: center;
+    border-radius:20px;
 }
 
+.senha-chamada h1{
+    font-size: 8rem;   
+    margin-bottom: 0%; 
+}
+
+.conteudo-senha-chamada{
+    
+    padding-bottom: 2rem;
+    color: #B1B1B1;
+    font-size: 20px;   
+}
+
+.conteudo-caixa{
+    font-size: 30px;
+}
+
+.container-final{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    justify-content: center;
+}
+
+.para-clientes{
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    display: grid;
+    margin-right: 10px;
+    background: var(--fundo-div);
+}
+
+.para-caixas{
+    padding: 1rem 2rem;
+    background: var(--fundo-div);
+    margin-left: 10px;
+    border-radius: 20px;
+    display: grid;
+}
+
+.title-content-final{
+    font-weight: 400;
+}
+
+.subtitle-content-final{
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.botoes, .botoes-cliente, .botoes-cliente-maior{
+   color: rgba(32, 33, 36, 0.88);
+   text-decoration: none;
+   transition: filter 0.3s;
+   border-radius: 10px;
+   align-items: center;
+   height: 2rem;
+   border: none;
+}
+
+.botoes-cliente{
+    margin-top: 2rem;
+    width: 30%;
+    align-items: center;
+}
+
+.botoes-cliente-maior{
+    margin-top: 0.5rem;
+    width: 61%;
+    display: flex;
+    justify-content: center
+}
+
+button{
+    
+    width: 20%;
+}
+
+button:hover{
+    filter: brightness(1.2);
+}

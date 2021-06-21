@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Imports -->
     <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Senhas</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <title>Banco Santander S.A.</title>
 
     <script type="text/javascript">
         var botaoClickado
@@ -43,13 +47,23 @@
         function chamar(clicked_id) {  
             var botaoClickado = clicked_id;
             if(botaoClickado == "caixa1"){
-                if(prioritario.length > 1){
+                if(prioritario.length > 0){
                     var senhaChamada = prioritario[0];
                     document.getElementById("visor-tela").innerHTML = prioritario[0]; 
                     prioritario.shift();
                     document.getElementById("numero-caixa").innerHTML = "Caixa 1";
+                }else if (rapido.length > 0){
+                    var senhaChamada = rapido[0];
+                    document.getElementById("visor-tela").innerHTML = rapido[0]; 
+                    rapido.shift;
+                    document.getElementById("numero-caixa").innerHTML = "Caixa 1";
+                }else if (comum.length > 0){
+                    var senhaChamada = comum[0];
+                    document.getElementById("visor-tela").innerHTML = comum[0]; 
+                    comum.shift();
+                    document.getElementById("numero-caixa").innerHTML = "Caixa 1";
                 }else{
-                    
+                    document.getElementById("visor-tela").innerHTML = "Nao ha senhas";
                 }
                 
             }else if(botaoClickado == "caixa2"){
@@ -72,35 +86,67 @@
     </script>
 </head>
 <body>
+    
+    <div class="container">
+        <header>
+            <div class="nome-banco">
+                Banco Bradesco S.A.
+            </div>
+        </header>
 
-    <div class="title">
-        Loja ficticia S.A.
-    </div>
-    <div class="senha-chamada">
-        <h1 id="visor-tela" class="senha-tela">Selecione um tipo de atendimento!</h1> 
-        <br><br>
-        <span id="numero-caixa"> Caixa 2 </span>
-    </div>
-    <div class="clientes">
-        <h1>Para clientes:</h1>
-        Escolha seu tipo de atendimento: <br><br>
-        <input id="btn-comum" type="button" value="Comum" onclick="add(this.id)">
-        <input id="btn-rapido" type="button" value="Rapido" onclick="add(this.id)">
-        <input id="btn-prioridade" type="button" value="Prioritario" onclick="add(this.id)">
-        <br>
-        <br>
-        Sua senha é: <span id="senha-clientes" class="senha-cliente">P-29</span>
-    </div>
+        <div class="content">
 
-    <div class="caixas">
-        <h1>Para caixas:</h1>
-        Clique em um caixa para chamar a senha: <br><br>
-        <input id="caixa1" onclick="chamar(this.id)" type="button" value="Caixa 1">
-        <input id="caixa2" onclick="chamar(this.id)" type="button" value="Caixa 2">
-        <input id="caixa3" onclick="chamar(this.id)" type="button" value="Caixa 3">
-        <input id="caixa4" onclick="chamar(this.id)" type="button" value="Caixa 4">
+            <div class="senha-chamada">
+                <h1>C9</h1><br>
+                <div class="conteudo-senha-chamada">
+                    dirigir-se ao    <span class="conteudo-caixa"> Caixa 2</span>
+                </div>
+                
+            </div>
 
+            <div class="container-final">
 
+                <div class="para-clientes">                
+                    <h5 class="title-content-final">
+                        para clientes
+                    </h5>
+                    <h1 class="subtitle-content-final">escolha seu tipo de atendimento:</h1>
+                    <div class="grupo-de-botoes">
+                        <button class="botoes-cliente" > 
+                            <img src="images/cadeira.svg" alt=""> Comum
+                        </button>
+
+                        <button class="botoes-cliente" > 
+                            <img src="images/rapido.svg" alt=""> Rapido
+                        </button>
+
+                        <button class="botoes-cliente-maior" > 
+                            <img src="images/prioritario.svg" alt=""> Prioritario
+                        </button>
+                    </div>    
+                    <div class="content-final-div">
+                        sua senha é:
+                        <h1>35</h1>
+                    </div>
+                </div>
+    
+                <div class="para-caixas">
+                    <h5 class="title-content-final">
+                        para caixas
+                    </h5>
+                    <h1 class="subtitle-content-final">clique para chamar uma senha:</h1>
+                    <div class="grupo-de-botoes">
+                        <button class="botoes" >Caixa 1</button>
+                        <button class="botoes" >Caixa 2</button>
+                        <button class="botoes" >Caixa 3</button>
+                        <button class="botoes" >Caixa 4</button>
+                    </div> 
+                </div>
+
+            </div>
+
+            
+        </div>
     </div>
 
 </body>
