@@ -97,9 +97,9 @@
         <div class="content">
 
             <div class="senha-chamada">
-                <h1>C9</h1><br>
+                <h1 id="visor-tela">--</h1><br>
                 <div class="conteudo-senha-chamada">
-                    dirigir-se ao    <span class="conteudo-caixa"> Caixa 2</span>
+                    dirigir-se ao <span id="numero-caixa" class="conteudo-caixa"> -- </span>
                 </div>
                 
             </div>
@@ -115,15 +115,15 @@
                         </h5>
                         <h1 class="subtitle-content-final">escolha seu tipo de atendimento:</h1>
                         <div class="grupo-de-botoes">
-                            <button class="botoes-cliente" > 
+                            <button id="btn-comum" class="botoes-cliente" onclick="add(this.id)" > 
                                   Comum
                             </button>
     
-                            <button class="botoes-cliente" > 
+                            <button id="btn-rapido" class="botoes-cliente" onclick="add(this.id)"> 
                                 Rapido
                             </button>
     
-                            <button class="botoes-cliente-maior" > 
+                            <button id="btn-prioridade" class="botoes-cliente-maior" onclick="add(this.id)"> 
                                  Prioritario
                             </button>
                         </div>  
@@ -131,7 +131,7 @@
 
                     <div class="content-final-div">
                         sua senha é:
-                        <h1>35</h1>
+                        <h1 id="senha-clientes">--</h1>
                     </div>  
 
                 </div>
@@ -142,10 +142,10 @@
                     </h5>
                     <h1 class="subtitle-content-final">clique para chamar uma senha:</h1>
                     <div class="grupo-de-botoes">
-                        <button class="botoes" >Caixa 1</button>
-                        <button class="botoes" >Caixa 2</button>
-                        <button class="botoes" >Caixa 3</button>
-                        <button class="botoes" >Caixa 4</button>
+                        <button id="caixa1" class="botoes" onclick="chamar(this.id)" >Caixa 1</button>
+                        <button id="caixa2" class="botoes" onclick="chamar(this.id)" >Caixa 2</button>
+                        <button id="caixa3" class="botoes" onclick="chamar(this.id)" >Caixa 3</button>
+                        <button id="caixa4" class="botoes" onclick="chamar(this.id)" >Caixa 4</button>
                     </div> 
                 </div>
 
