@@ -59,11 +59,13 @@ body{
 }
 
 .para-clientes{
-    padding: 1rem 2rem;
-    border-radius: 20px;
-    display: grid;
     margin-right: 10px;
     background: var(--fundo-div);
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;    
 }
 
 .para-caixas{
@@ -95,19 +97,35 @@ body{
 
 .botoes-cliente{
     margin-top: 2rem;
-    width: 30%;
+    width: 49%;
     align-items: center;
 }
 
 .botoes-cliente-maior{
     margin-top: 0.5rem;
-    width: 61%;
+    width: 100%;
     display: flex;
     justify-content: center
 }
 
+.content-final-div h1{
+    font-size: 6rem;
+}
+
+.para-caixas h1{
+    margin-top: -30px;
+}
+
+.para-caixas div{
+    display: flex;
+    justify-content: center;
+}
+
+.para-caixas .grupo-de-botoes button{
+    margin-left: 0.5rem;
+}
+
 button{
-    
     width: 20%;
 }
 
