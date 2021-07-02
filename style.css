@@ -95,13 +95,13 @@ body{
    border: none;
 }
 
-.botoes-cliente{
+#btn-rapido, #btn-comum{
     margin-top: 2rem;
     width: 49%;
     align-items: center;
 }
 
-.botoes-cliente-maior{
+#btn-prioridade{
     margin-top: 0.5rem;
     width: 100%;
     display: flex;
