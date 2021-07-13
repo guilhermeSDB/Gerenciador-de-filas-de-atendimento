@@ -38,13 +38,13 @@
         })        
           
         function handleClick(event){
-            event.preventDefault()            
-            botaoComum.addComum()
+            event.preventDefault()
+            if(botoes == "btn-comum"){
+                addComum()
+            }else{
+                addRapido()
+            }   
         }        
-
-
-
-
 
 
         function add (clicked_id) {
