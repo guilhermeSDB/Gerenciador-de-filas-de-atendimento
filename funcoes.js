@@ -1,4 +1,6 @@
 
+        // Feito por Guilherme S Barros
+
         var prioritario = [];
         var comum = [];
         var rapido = [];
@@ -9,7 +11,7 @@
         function click(){
             clicks += 1; 
         }
-        
+
         function senhaClientes() {
             document.getElementById("senha-clientes").innerHTML = senhaCliente;
         }

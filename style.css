@@ -1,3 +1,6 @@
+/* Design by Guilherme S barros */
+
+
 *{
     margin: 0;
     padding: 0;
@@ -29,6 +32,7 @@ body{
 }
 
 .senha-chamada{
+    padding: 2rem 0;
     width: 90%;
     margin: 1rem auto;
     background: var(--fundo-div);
@@ -45,11 +49,12 @@ body{
     
     padding-bottom: 2rem;
     color: #B1B1B1;
-    font-size: 20px;   
+    font-size: 2rem;   
 }
 
 .conteudo-caixa{
-    font-size: 30px;
+    font-size: 2.3rem;
+    padding-left: .6rem;
 }
 
 .container-final{
@@ -61,7 +66,7 @@ body{
 .para-clientes{
     margin-right: 10px;
     background: var(--fundo-div);
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
@@ -69,7 +74,7 @@ body{
 }
 
 .para-caixas{
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     background: var(--fundo-div);
     margin-left: 10px;
     border-radius: 20px;
@@ -78,10 +83,11 @@ body{
 
 .title-content-final{
     font-weight: 400;
+    color: rgb(141, 141, 141);
 }
 
 .subtitle-content-final{
-    font-weight: 500;
+    font-weight: 900;
     font-size: 1rem;
 }
 
@@ -113,12 +119,16 @@ body{
 }
 
 .para-caixas h1{
-    margin-top: -30px;
+    margin-top: -2.45rem;
 }
 
 .para-caixas div{
     display: flex;
     justify-content: center;
+}
+
+#buttons-caixa{
+ margin-top: -28px;
 }
 
 .para-caixas .grupo-de-botoes button{
