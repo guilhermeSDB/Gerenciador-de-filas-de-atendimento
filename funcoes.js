@@ -23,7 +23,14 @@
             rapido.push("R"+clicks);
             document.getElementById("senha-clientes").innerHTML = senhaCliente;
         }
-        
+
+        function addPrioritario(){
+            click()
+            senhaCliente = "P"+clicks;
+            rapido.push("P"+clicks);
+            document.getElementById("senha-clientes").innerHTML = senhaCliente;
+        }
+                
         //Declarando 
         const botaoComum = document.querySelector("btn-comum")
         const botaoRapido = document.querySelector("btn-rapido")
@@ -35,38 +42,44 @@
         checkButtons.forEach( button => {
             //adicionar a escuta
             button.addEventListener("click" , handleClick)
+
         })        
           
-        function handleClick(event){
+        function    handleClick(event){
+            console.log(event)
             event.preventDefault()
-            if(botoes == "btn-comum"){
+            if(event.target.id == "btn-comum" ){
                 addComum()
-            }else{
+            }else if(event.target.id == "btn-rapido"){
                 addRapido()
-            }   
+            }else if(event.target.id == "btn-rapido"){
+                addPrioritario()
+            }else if(event.target.id == "caixa1"){
+                chamarRapido()
+            }
         }        
 
 
-        function add (clicked_id) {
-            var botaoClickado = clicked_id;
-            clicks += 1;   
+        // function add (clicked_id) {
+        //     var botaoClickado = clicked_id;
+        //     clicks += 1;   
 
-            if(botaoClickado == "btn-comum"){
-                senhaCliente = "C"+clicks;
-                comum.push("C"+clicks);
-                document.getElementById("senha-clientes").innerHTML = senhaCliente;
-            }else if (botaoClickado == "btn-rapido"){
-                senhaCliente = "R"+clicks;
-                rapido.push("R"+clicks);
-                document.getElementById("senha-clientes").innerHTML = senhaCliente;
-            }else if (botaoClickado == "btn-prioridade"){
-                senhaCliente = "P"+clicks;
-                prioritario.push("P"+clicks);
-                document.getElementById("senha-clientes").innerHTML = senhaCliente;
-            }
+        //     if(botaoClickado == "btn-comum"){
+        //         senhaCliente = "C"+clicks;
+        //         comum.push("C"+clicks);
+        //         document.getElementById("senha-clientes").innerHTML = senhaCliente;
+        //     }else if (botaoClickado == "btn-rapido"){
+        //         senhaCliente = "R"+clicks;
+        //         rapido.push("R"+clicks);
+        //         document.getElementById("senha-clientes").innerHTML = senhaCliente;
+        //     }else if (botaoClickado == "btn-prioridade"){
+        //         senhaCliente = "P"+clicks;
+        //         prioritario.push("P"+clicks);
+        //         document.getElementById("senha-clientes").innerHTML = senhaCliente;
+        //     }
             
             
-        }
+        // }
 
         function chamarRapido(){
             var senhaChamada = rapido[0];
