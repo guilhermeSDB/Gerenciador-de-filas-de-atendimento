@@ -1,42 +1,87 @@
-        var botaoClickado
+
         var prioritario = [];
-        var comum =[];
+        var comum = [];
         var rapido = [];
-        var senhaCliente;        
+        let senhaCliente;
         
+        //Função para contar os clickes        
         clicks = 0;
         function click(){
             clicks += 1; 
         }
-
-        //Função para adicionar uma senha comum ao Array Comum[]
-        function addComum(){
-            click()
-            senhaCliente = "C"+clicks;
-            comum.push("C"+clicks);
+        
+        function senhaClientes() {
             document.getElementById("senha-clientes").innerHTML = senhaCliente;
+        }
+
+        //Funções para adicionar uma senha aos Arrays 
+        function addComum(){
+            click() // Chama a função click
+            senhaCliente = "C-"+clicks; // Adiciona o tipo da senha + o Click numa variavel
+            comum.push("C-"+clicks); // Adiciona o tipo da senha + o click no Array
+            senhaClientes();// Exibe a senha do Cliente no painel
         }
 
         function addRapido(){
             click()
-            senhaCliente = "R"+clicks;
-            rapido.push("R"+clicks);
-            document.getElementById("senha-clientes").innerHTML = senhaCliente;
+            senhaCliente = "R-"+clicks;
+            rapido.push("R-"+clicks);
+            senhaClientes();
         }
 
         function addPrioritario(){
             click()
-            senhaCliente = "P"+clicks;
-            rapido.push("P"+clicks);
-            document.getElementById("senha-clientes").innerHTML = senhaCliente;
+            senhaCliente = "P-"+clicks;
+            prioritario.push("P-"+clicks);
+            senhaClientes();
         }
-                
-        //Declarando 
-        const botaoComum = document.querySelector("btn-comum")
-        const botaoRapido = document.querySelector("btn-rapido")
-        const botaoPrioridade = document.querySelector("btn-prioridade")
+         //Fim das funções
 
-        // Pegar todos os botoes que existem com a class botoes
+
+         
+        //Função para chamar as senhas Rapidas, com verificação.   
+        function chamarRapido(){
+            if(rapido.length > 0){
+                document.getElementById("visor-tela").innerHTML = rapido[0]; 
+                rapido.shift();
+                document.getElementById("numero-caixa").innerHTML = event.target.id;
+            }else{
+                chamarPrioritario()
+            }
+            
+            
+        }    
+        
+        //Função para chamar as senhas Prioritarias, com verificação.        
+        function chamarPrioritario(){            
+            if(prioritario.length > 0){
+                document.getElementById("visor-tela").innerHTML = prioritario[0]; 
+                prioritario.shift();
+                document.getElementById("numero-caixa").innerHTML = event.target.id;  
+            }else if(rapido.length > 0){
+                chamarRapido();
+            }else if (comum.length > 0){
+                chamarComum();
+            }else{
+                document.getElementById("visor-tela").innerHTML = "Nao ha Senhas";
+            }
+            
+        }
+
+        //Função para chamar as senhas Comums, com verificação.  
+        function chamarComum(){  
+            if(comum.length >0){
+                document.getElementById("visor-tela").innerHTML = comum[0]; 
+                comum.shift();
+                document.getElementById("numero-caixa").innerHTML = event.target.id;
+            }else{
+                chamarPrioritario()
+            } 
+            
+        }
+        //Fim das funções
+
+        // Pega todos os botoes que existem com a class botoes
         const checkButtons = document.querySelectorAll(".botoes")
 
         checkButtons.forEach( button => {
@@ -44,84 +89,25 @@
             button.addEventListener("click" , handleClick)
 
         })        
-          
-        function    handleClick(event){
-            console.log(event)
+
+        //Quando o botao for clickado, registra o evento e entra no IF          
+        function handleClick(event){
+            // console.log(event)
             event.preventDefault()
             if(event.target.id == "btn-comum" ){
                 addComum()
             }else if(event.target.id == "btn-rapido"){
                 addRapido()
-            }else if(event.target.id == "btn-rapido"){
+            }else if(event.target.id == "btn-prioridade"){
                 addPrioritario()
-            }else if(event.target.id == "caixa1"){
+            }else if(event.target.id == "Caixa 1"){
+                chamarPrioritario()
+            }else if(event.target.id == "Caixa 2"){
                 chamarRapido()
+            }else if(event.target.id == "Caixa 3"){
+                chamarRapido()            
+            }else if(event.target.id == "Caixa 4"){
+                chamarComum()
             }
         }        
-
-
-        // function add (clicked_id) {
-        //     var botaoClickado = clicked_id;
-        //     clicks += 1;   
-
-        //     if(botaoClickado == "btn-comum"){
-        //         senhaCliente = "C"+clicks;
-        //         comum.push("C"+clicks);
-        //         document.getElementById("senha-clientes").innerHTML = senhaCliente;
-        //     }else if (botaoClickado == "btn-rapido"){
-        //         senhaCliente = "R"+clicks;
-        //         rapido.push("R"+clicks);
-        //         document.getElementById("senha-clientes").innerHTML = senhaCliente;
-        //     }else if (botaoClickado == "btn-prioridade"){
-        //         senhaCliente = "P"+clicks;
-        //         prioritario.push("P"+clicks);
-        //         document.getElementById("senha-clientes").innerHTML = senhaCliente;
-        //     }
-            
-            
-        // }
-
-        function chamarRapido(){
-            var senhaChamada = rapido[0];
-            document.getElementById("visor-tela").innerHTML = rapido[0]; 
-            rapido.shift();
-        }       
-        
-        function chamarPrioritario(){
-            var senhaChamada = prioritario[0];
-            document.getElementById("visor-tela").innerHTML = prioritario[0]; 
-            prioritario.shift();
-        }
-        
-        
-        function chamar(clicked_id) {  
-            var botaoClickado = clicked_id;
-            if(botaoClickado == "caixa1"){
-                if(prioritario.length > 0){
-                    chamarPrioritario()
-                    document.getElementById("numero-caixa").innerHTML = "Caixa 1";
-                }else if (rapido.length > 0){
-                    chamarRapido()
-                    document.getElementById("numero-caixa").innerHTML = "Caixa 1";
-                }else if (comum.length > 0){
-                    var senhaChamada = comum[0];
-                    document.getElementById("visor-tela").innerHTML = comum[0]; 
-                    comum.shift();
-                    document.getElementById("numero-caixa").innerHTML = "Caixa 1";
-                }else{
-                    document.getElementById("visor-tela").innerHTML = "Nao ha senhas";
-                }
-                
-            }else if(botaoClickado == "caixa2"){
-                chamarRapido()
-                document.getElementById("numero-caixa").innerHTML = "Caixa 2";
-            }else if(botaoClickado == "caixa3"){
-                chamarRapido()
-                document.getElementById("numero-caixa").innerHTML = "Caixa 3";
-            }else if(botaoClickado == "caixa4"){
-                var senhaChamada = comum[0];
-                document.getElementById("visor-tela").innerHTML = comum[0]; 
-                comum.shift();
-                document.getElementById("numero-caixa").innerHTML = "Caixa 4";
-            }    
-        }
+ 
